@@ -26,5 +26,12 @@ router.get('/profile', auth.checkAuthentication, async function(req, res, next) 
     res.status(result.status).send(result.result);
 });
 
+router.post('/register', async function(req, res, next){
+    console.log("Register")
+    let player = req.body;
+    let result = await uModel.registerUser(player);
+    res.status(result.status).send(result.result);
+
+});
 
 module.exports = router;

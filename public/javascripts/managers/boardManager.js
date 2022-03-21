@@ -1,4 +1,4 @@
-const playValues = ['rock', 'paper', 'scissors'];
+const playValues = [];
 
 class BoardManager {
     

@@ -30,3 +30,15 @@ module.exports.loginCheck = async function (name,password) {
       return { status: 500, result: err };
     }
   }
+
+  module.exports.registerUser = async function (player){
+    try {
+        let check_sql = `SELECT ply_name FROM player where ply_name = $1`;
+        let register_sql = `INSERT INTO player (ply_name, ply_passwd) VALUES ($1, $2)`;
+        let result = await pool.query(register_sql, [player.name, player.password]);
+        return { status: 200, result: result };
+      }catch(err){
+         console.log(err);
+         return { status: 500, result: err }
+        }
+      }

@@ -22,4 +22,4 @@ async function fillRooms() {
 function openRoom(id) {
     sessionStorage.setItem("roomId",id);
     window.location = "game.html"
-}   
+}
